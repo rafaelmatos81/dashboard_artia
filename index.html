@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Artia — Exxata</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background-color: #09182b;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* ── HEADER (compact) ───────────────────────── */
+    .header {
+      background-color: #09182b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 42px;
+      flex-shrink: 0;
+      border-bottom: 2px solid #d51d07;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 20px;
+      background-color: rgba(255,255,255,0.18);
+    }
+
+    .header-title {
+      color: rgba(255,255,255,0.45);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .header-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(213,29,7,0.8);
+      border: 1px solid rgba(213,29,7,0.3);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ── IFRAME ─────────────────────────────────── */
+    .embed-wrapper {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── FOOTER (minimal) ───────────────────────── */
+    .footer {
+      background-color: #09182b;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-text {
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-text span {
+      color: rgba(213,29,7,0.6);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-logo">
+
+        <!-- Ícone Exxata (branco) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 30.864 25.093" aria-hidden="true">
+          <path d="M233.162,47.3l-1.669,1.669a4.081,4.081,0,0,0,0,5.77l1.669,1.669,1.669-1.669a4.085,4.085,0,0,0,0-5.77Zm0,11.4-2.815-2.815a5.7,5.7,0,0,1,0-8.063l2.815-2.815,2.815,2.815a5.707,5.707,0,0,1,0,8.063Z" transform="translate(-217.734 -45.011)" fill="#fff"/>
+          <rect width="30.864" height="1.621" transform="translate(0 11.736)" fill="#d51d07"/>
+          <path d="M233.162,251.754l-1.669,1.669a4.081,4.081,0,0,0,0,5.77l1.669,1.669,1.669-1.669a4.085,4.085,0,0,0,0-5.77Zm0,11.4-2.815-2.815a5.7,5.7,0,0,1,0-8.063l2.815-2.815,2.815,2.815a5.707,5.707,0,0,1,0,8.063Z" transform="translate(-217.734 -238.062)" fill="#fff"/>
+          <path d="M105.233,195.741a4.08,4.08,0,0,1-5.77,0l-1.669-1.669,1.669-1.669a4.08,4.08,0,0,1,5.77,0l1.669,1.669Zm-11.4,0a4.08,4.08,0,0,1-5.77,0l-1.669-1.669,1.669-1.669a4.081,4.081,0,0,1,5.77,0l1.669,1.669Zm12.547-4.484a5.7,5.7,0,0,0-8.063,0l-1.669,1.669-1.669-1.669a5.7,5.7,0,0,0-8.063,0L84.1,194.072l2.815,2.815a5.7,5.7,0,0,0,8.063,0l1.669-1.669,1.669,1.669a5.7,5.7,0,0,0,8.063,0l2.815-2.815Z" transform="translate(-81.22 -181.525)" fill="#fff"/>
+          <rect width="10.276" height="1.621" transform="translate(10.649 11.736)" fill="#d51d07"/>
+        </svg>
+
+        <div class="header-divider"></div>
+
+        <!-- Wordmark Exxata (branco) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="22" viewBox="0 0 164.218 39.827" aria-label="Exxata">
+          <g transform="translate(2033.565 -2788.991)">
+            <g transform="translate(-2033.565 2788.991)">
+              <path d="M235.8,48.649,233.147,51.3a6.477,6.477,0,0,0,0,9.158l2.649,2.649,2.649-2.649a6.483,6.483,0,0,0,0-9.158Zm0,18.095-4.468-4.468a9.048,9.048,0,0,1,0-12.8l4.468-4.468,4.468,4.468a9.058,9.058,0,0,1,0,12.8Z" transform="translate(-211.309 -45.011)" fill="#fff"/>
+              <rect width="48.987" height="2.573" transform="translate(0 18.627)" fill="#d51d07"/>
+              <path d="M235.8,253.1l-2.649,2.649a6.477,6.477,0,0,0,0,9.158l2.649,2.649,2.649-2.649a6.483,6.483,0,0,0,0-9.158Zm0,18.094-4.468-4.468a9.048,9.048,0,0,1,0-12.8l4.468-4.468,4.468,4.468a9.058,9.058,0,0,1,0,12.8Z" transform="translate(-211.309 -231.368)" fill="#fff"/>
+              <path d="M117.641,199.354a6.476,6.476,0,0,1-9.158,0l-2.649-2.649,2.649-2.649a6.476,6.476,0,0,1,9.158,0l2.649,2.649Zm-18.094,0a6.476,6.476,0,0,1-9.158,0l-2.649-2.649,2.649-2.649a6.476,6.476,0,0,1,9.158,0l2.649,2.649Zm19.913-7.117a9.049,9.049,0,0,0-12.8,0l-2.649,2.649-2.649-2.649a9.049,9.049,0,0,0-12.8,0L84.1,196.705l4.468,4.468a9.049,9.049,0,0,0,12.8,0l2.649-2.649,2.649,2.649a9.049,9.049,0,0,0,12.8,0l4.468-4.468Z" transform="translate(-79.528 -176.792)" fill="#fff"/>
+              <rect width="16.31" height="2.573" transform="translate(16.902 18.627)" fill="#d51d07"/>
+            </g>
+            <path d="M108.1,19.883H103.94l-1.75-4.456h-7.7l-1.753,4.456H88.554L96.574,0h3.439L108.1,19.883ZM98.343,5.632h0l-2.416,6.14h4.827l-2.411-6.14ZM77.427,19.883H73.268l-1.75-4.456h-7.7l-1.753,4.456H57.882L65.9,0h3.439l8.086,19.883ZM67.672,5.632l-2.416,6.14h4.827ZM84.956,19.883H81.093V3.655H73.927V0H92.122V3.655H84.956V19.883Zm-42.813,0H38.162V17.315A9.8,9.8,0,0,1,39.57,12a8.117,8.117,0,0,1,.95-1.23,7.717,7.717,0,0,1,1.151-1,7.68,7.68,0,0,1-1.145-.991,7.972,7.972,0,0,1-.941-1.213,9.9,9.9,0,0,1-1.423-5.278V0h3.981V2.272a6.049,6.049,0,0,0,1.386,4.178,5.1,5.1,0,0,0,7.151-.015,5.933,5.933,0,0,0,1.371-4.163V0h4.01V2.272a9.93,9.93,0,0,1-1.423,5.289,7.887,7.887,0,0,1-.944,1.213,7.659,7.659,0,0,1-1.152.991,7.7,7.7,0,0,1,1.159,1A8.024,8.024,0,0,1,54.654,12a9.8,9.8,0,0,1,1.407,5.318v2.568h-4.01V17.315A6.074,6.074,0,0,0,50.688,13.1a4.517,4.517,0,0,0-3.591-1.48,4.517,4.517,0,0,0-3.591,1.48,6.073,6.073,0,0,0-1.363,4.214v2.568Zm-20.591,0H17.571V17.315A9.8,9.8,0,0,1,18.978,12a8.125,8.125,0,0,1,.95-1.23,7.719,7.719,0,0,1,1.151-1,7.675,7.675,0,0,1-1.144-.991,7.983,7.983,0,0,1-.941-1.213,9.9,9.9,0,0,1-1.422-5.278V0h3.981V2.272a6.049,6.049,0,0,0,1.386,4.178,4.523,4.523,0,0,0,3.568,1.457,4.547,4.547,0,0,0,3.583-1.472,5.932,5.932,0,0,0,1.371-4.163V0h4.01V2.272a9.927,9.927,0,0,1-1.423,5.289A7.884,7.884,0,0,1,33.1,8.774a7.664,7.664,0,0,1-1.152.991,7.7,7.7,0,0,1,1.159,1A8.025,8.025,0,0,1,34.063,12a9.8,9.8,0,0,1,1.407,5.318v2.568h-4.01V17.315A6.074,6.074,0,0,0,30.1,13.1a4.517,4.517,0,0,0-3.591-1.48,4.517,4.517,0,0,0-3.592,1.48,6.075,6.075,0,0,0-1.362,4.214v2.568Zm-6.874,0H0V0H14.878V3.655H3.862V7.877h6.7v3.655h-6.7v4.7H14.678v3.655Z" transform="translate(-1977.445 2798.932)" fill="#fff"/>
+          </g>
+        </svg>
+
+        <div class="header-divider"></div>
+        <span class="header-title">Analytics</span>
+      </div>
+
+      <div class="header-badge">Power BI</div>
+    </header>
+
+    <!-- IFRAME -->
+    <div class="embed-wrapper">
+      <iframe
+        title="Dashboard Artia"
+        src="https://app.powerbi.com/view?r=eyJrIjoiNjVhNTkzMzAtYzcyYS00MjBkLTk0OGMtN2Q4Zjc3MjljZDJhIiwidCI6ImZlNTQ2MDA4LWM3NmItNDUzZC1iNjA5LTg5NzJjYzg5OWMwNSJ9"
+        frameborder="0"
+        allowfullscreen="true">
+      </iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-text">© 2026 <span>Exxata</span> — Todos os direitos reservados</p>
+    </footer>
+
+  </div>
+</body>
+</html>
